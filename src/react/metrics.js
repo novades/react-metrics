@@ -49,7 +49,7 @@ export default function metrics(metricsOrConfig, options = {}) {
                 return mountedInstances;
             }
 
-            componentWillMount() {
+            UNSAFE_componentWillMount() {
                 if (!canUseDOM) {
                     return;
                 }
@@ -81,7 +81,7 @@ export default function metrics(metricsOrConfig, options = {}) {
                     this._newRouteState = null;
                 }
             }
-            componentWillReceiveProps(newProps) {
+            UNSAFE_componentWillReceiveProps(newProps) {
                 this._newRouteState = getNewRouteState(newProps, this.props);
                 if (this._newRouteState) {
                     this._getMetrics().setRouteState(this._newRouteState);
